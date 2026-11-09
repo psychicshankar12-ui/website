@@ -66,17 +66,18 @@ export default function WhyChooseUs({ settings }: WhyChooseUsProps) {
           {features.map((feat, idx) => (
             <div
               key={idx}
-              className="bg-slate-900/70 border border-purple-900/40 hover:border-amber-400/40 rounded-2xl p-5 text-center flex flex-col items-center justify-start transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-purple-950/50"
+              className="group bg-slate-900/80 border border-purple-900/50 hover:border-amber-400/60 rounded-2xl p-5 text-center flex flex-col items-center justify-start transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-purple-950/60"
             >
-              <div className="relative w-16 h-16 mb-4">
+              <div className="relative w-20 h-20 md:w-24 md:h-24 mb-4 drop-shadow-[0_4px_14px_rgba(255,215,0,0.35)] transition-transform duration-300 group-hover:scale-105">
                 <Image
                   src={feat.img}
                   alt={feat.title}
                   fill
+                  sizes="(max-width: 768px) 80px, 96px"
                   className="object-contain"
                 />
               </div>
-              <h3 className="text-sm md:text-base font-bold text-white mb-1.5">
+              <h3 className="text-sm md:text-base font-bold text-white mb-1.5 group-hover:text-amber-300 transition-colors">
                 {feat.title}
               </h3>
               <p className="text-xs text-slate-400 leading-relaxed">
