@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import {
@@ -84,23 +84,55 @@ export default function AdminDashboard() {
   };
   const [formData, setFormData] = useState<Partial<DynamicPage>>(initialFormState);
 
-  // Check Auth on Mount
-  useEffect(() => {
-    checkAuth();
+  const fetchAllData = useCallback(async () => {
+    setLoadingData(true);
+    try {
+      const [pagesRes, inqRes, testRes, setRes] = await Promise.all([
+        fetch('/api/pages'),
+        fetch('/api/inquiries'),
+        fetch('/api/testimonials'),
+        fetch('/api/settings'),
+      ]);
+      const pagesData = await pagesRes.json();
+      const inqData = await inqRes.json();
+      const testData = await testRes.json();
+      const setData = await setRes.json();
+
+      if (pagesData.pages) setPages(pagesData.pages);
+      if (inqData.inquiries) setInquiries(inqData.inquiries);
+      if (testData.testimonials) setTestimonials(testData.testimonials);
+      if (setData.settings) setSettings(setData.settings);
+    } catch (err) {
+      console.error('Error fetching admin data:', err);
+    } finally {
+      setLoadingData(false);
+    }
   }, []);
 
-  const checkAuth = async () => {
-    try {
-      const res = await fetch('/api/auth');
-      const data = await res.json();
-      setIsAuthenticated(data.authenticated);
-      if (data.authenticated) {
-        fetchAllData();
+  // Check Auth on Mount
+  useEffect(() => {
+    let ignore = false;
+    async function init() {
+      try {
+        const res = await fetch('/api/auth');
+        const data = await res.json();
+        if (!ignore) {
+          setIsAuthenticated(data.authenticated);
+          if (data.authenticated) {
+            fetchAllData();
+          }
+        }
+      } catch {
+        if (!ignore) {
+          setIsAuthenticated(false);
+        }
       }
-    } catch {
-      setIsAuthenticated(false);
     }
-  };
+    void init();
+    return () => {
+      ignore = true;
+    };
+  }, [fetchAllData]);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -129,31 +161,6 @@ export default function AdminDashboard() {
   const handleLogout = async () => {
     await fetch('/api/auth', { method: 'DELETE' });
     setIsAuthenticated(false);
-  };
-
-  const fetchAllData = async () => {
-    setLoadingData(true);
-    try {
-      const [pagesRes, inqRes, testRes, setRes] = await Promise.all([
-        fetch('/api/pages'),
-        fetch('/api/inquiries'),
-        fetch('/api/testimonials'),
-        fetch('/api/settings'),
-      ]);
-      const pagesData = await pagesRes.json();
-      const inqData = await inqRes.json();
-      const testData = await testRes.json();
-      const setData = await setRes.json();
-
-      if (pagesData.pages) setPages(pagesData.pages);
-      if (inqData.inquiries) setInquiries(inqData.inquiries);
-      if (testData.testimonials) setTestimonials(testData.testimonials);
-      if (setData.settings) setSettings(setData.settings);
-    } catch (err) {
-      console.error('Error fetching admin data:', err);
-    } finally {
-      setLoadingData(false);
-    }
   };
 
   // Open Create Page

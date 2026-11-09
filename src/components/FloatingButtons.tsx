@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { Phone, MessageSquare, Calendar } from 'lucide-react';
 import type { SiteSettings } from '@/lib/db';
 
@@ -60,13 +61,13 @@ export default function FloatingButtons({ settings }: FloatingButtonsProps) {
           <span>WHATSAPP</span>
         </a>
 
-        <a
+        <Link
           href="/contactus"
           className="py-2.5 bg-purple-900 hover:bg-purple-800 text-amber-300 border border-amber-400/40 font-bold text-xs rounded-xl flex items-center justify-center space-x-1 shadow"
         >
           <Calendar className="w-3.5 h-3.5" />
           <span>CONSULT</span>
-        </a>
+        </Link>
       </div>
     </>
   );

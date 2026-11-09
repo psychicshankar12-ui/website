@@ -2,8 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
-import { ChevronLeft, ChevronRight, Phone, MessageSquare } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import type { SiteSettings } from '@/lib/db';
 
 interface HeroSliderProps {
@@ -12,38 +11,38 @@ interface HeroSliderProps {
 
 const slides = [
   {
-    desktop: '/images/herobanner/ban01.png',
-    mobile: '/images/herobanner/mob_01.png',
+    desktop: '/images/herobanner/banner_01.png',
+    mobile: '/images/herobanner/mobile_01.png',
     title: 'No.1 Indian Best Astrologer & Psychic Spiritual Healer | Psychic Shankar',
     ctaText: 'Consult Master Astrologer'
   },
   {
-    desktop: '/images/herobanner/ban02.png',
-    mobile: '/images/herobanner/mob_02.png',
+    desktop: '/images/herobanner/banner_02.png',
+    mobile: '/images/herobanner/mobile_02.png',
     title: 'Specialist in Love Psychic Reading & Relationships | Psychic Shankar',
     ctaText: 'Get Ex Love Back'
   },
   {
-    desktop: '/images/herobanner/ban03.png',
-    mobile: '/images/herobanner/mob_03.png',
+    desktop: '/images/herobanner/banner_03.png',
+    mobile: '/images/herobanner/mobile_03.png',
     title: 'Black Magic & Evil Spirit Removal Specialist | Psychic Shankar',
     ctaText: 'Break Generational Curses'
   },
   {
-    desktop: '/images/herobanner/ban04.png',
-    mobile: '/images/herobanner/mob_04.png',
+    desktop: '/images/herobanner/banner_04.png',
+    mobile: '/images/herobanner/mobile_04.png',
     title: 'Husband & Wife Relationship Dispute Specialist | Psychic Shankar',
     ctaText: 'Stop Separation & Divorce'
   },
   {
-    desktop: '/images/herobanner/ban05.png',
-    mobile: '/images/herobanner/mob_05.png',
+    desktop: '/images/herobanner/banner_05.png',
+    mobile: '/images/herobanner/mobile_05.png',
     title: 'Spiritual Healing & Negative Energy Removal | Psychic Shankar',
     ctaText: 'Cleanse Negative Aura'
   },
   {
-    desktop: '/images/herobanner/ban06.png',
-    mobile: '/images/herobanner/mob_06.png',
+    desktop: '/images/herobanner/banner_06.png',
+    mobile: '/images/herobanner/mobile_06.png',
     title: 'World Famous Love Psychic Reader & Spiritual Healer | Psychic Shankar',
     ctaText: 'Divine Spiritual Blessings'
   }
