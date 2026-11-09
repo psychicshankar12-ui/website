@@ -15,15 +15,16 @@ export default function ServiceCard({ service, settings }: ServiceCardProps) {
   return (
     <div className="service-card-bg rounded-2xl overflow-hidden flex flex-col group">
       {/* Image Container */}
-      <div className="relative w-full h-48 sm:h-52 overflow-hidden bg-slate-900">
+      <div className="relative w-full h-52 sm:h-56 overflow-hidden bg-gradient-to-b from-slate-950 via-[#130f29] to-slate-950 p-2 flex items-center justify-center">
         <Image
           src={service.featuredImage || '/images/our_service_img/pro_im_1.png'}
           alt={service.title}
           fill
-          className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+          className="object-contain group-hover:scale-105 transition-transform duration-500 drop-shadow-2xl"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent" />
-        <span className="absolute top-3 right-3 bg-amber-500/90 text-slate-950 font-black text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-full shadow">
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent pointer-events-none" />
+        <span className="absolute top-3 right-3 bg-amber-500/90 text-slate-950 font-black text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-full shadow pointer-events-none">
           Verified Solution
         </span>
       </div>
