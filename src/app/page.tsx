@@ -17,7 +17,7 @@ import FloatingButtons from '@/components/FloatingButtons';
 
 
 export async function generateMetadata(): Promise<Metadata> {
-  const settings = getSettings();
+  const settings = await getSettings();
   return {
     title: `${settings.siteName} | ${settings.tagline}`,
     description:
@@ -46,14 +46,14 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function HomePage() {
-  const settings = getSettings();
-  const allPages = getAllPages();
+export default async function HomePage() {
+  const settings = await getSettings();
+  const allPages = await getAllPages();
   const services = allPages.filter((p) => p.category === 'service' && p.status === 'published');
   const locations = allPages.filter((p) => p.category === 'location' && p.status === 'published');
   const customPages = allPages.filter((p) => p.category === 'custom' && p.status === 'published');
-  const testimonials = getAllTestimonials();
-  const faqs = getFaqs();
+  const testimonials = await getAllTestimonials();
+  const faqs = await getFaqs();
 
   // JSON-LD Schema markup for LocalBusiness & Astrologer Person
   const schemaData = {

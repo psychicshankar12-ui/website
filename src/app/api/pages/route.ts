@@ -9,14 +9,14 @@ export async function GET(req: Request) {
     const status = searchParams.get('status') || undefined;
 
     if (id) {
-      const page = getPageById(id);
+      const page = await getPageById(id);
       if (!page) {
         return NextResponse.json({ success: false, error: 'Page not found' }, { status: 404 });
       }
       return NextResponse.json({ success: true, page });
     }
 
-    const pages = getAllPages(category, status);
+    const pages = await getAllPages(category, status);
     return NextResponse.json({ success: true, pages });
   } catch (error) {
     return NextResponse.json({ success: false, error: 'Failed to fetch pages' }, { status: 500 });
@@ -32,7 +32,7 @@ export async function POST(req: Request) {
       return NextResponse.json({ success: false, error: 'Title and Slug are required' }, { status: 400 });
     }
 
-    const newPage = createPage({
+    const newPage = await createPage({
       title: body.title,
       slug: body.slug,
       category: body.category || 'custom',
@@ -71,7 +71,7 @@ export async function PUT(req: Request) {
       return NextResponse.json({ success: false, error: 'Page ID is required' }, { status: 400 });
     }
 
-    const updated = updatePage(id, updates);
+    const updated = await updatePage(id, updates);
     if (!updated) {
       return NextResponse.json({ success: false, error: 'Page not found' }, { status: 404 });
     }
@@ -92,10 +92,9 @@ export async function DELETE(req: Request) {
       return NextResponse.json({ success: false, error: 'Page ID is required' }, { status: 400 });
     }
 
-    const deleted = deletePage(id);
+    const deleted = await deletePage(id);
     return NextResponse.json({ success: deleted });
   } catch (error) {
     return NextResponse.json({ success: false, error: 'Failed to delete page' }, { status: 500 });
   }
 }
-

@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import { Redis } from '@upstash/redis';
 
 export interface DynamicPage {
   id: string;
@@ -81,53 +82,108 @@ interface DatabaseSchema {
   inquiries: Inquiry[];
 }
 
-const DB_FILE = path.join(process.cwd(), 'src/data/db.json');
+const defaultSettings: SiteSettings = {
+  siteName: 'Psychic Arjun Krishna',
+  tagline: 'Best Indian Astrologer in USA',
+  phone: '+19298677866',
+  phoneDisplay: '+1 (929) 867-7866',
+  whatsapp: '+19298677866',
+  email: 'psychicarjunkrishna@gmail.com',
+  address: 'New York, USA',
+  headerAnnouncement: 'All Religions Are Welcome • Top Indian Astrologer in USA',
+  facebookUrl: '',
+  instagramUrl: '',
+  youtubeUrl: '',
+  twitterUrl: '',
+  defaultOgImage: '/images/logo.png',
+  googleAnalyticsId: '',
+  adminUser: 'admin',
+  adminPass: 'arjun2026!',
+};
 
-function readDb(): DatabaseSchema {
+const hasRedis = Boolean(
+  (process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL) &&
+  (process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN)
+);
+
+const redis = hasRedis
+  ? new Redis({
+      url: (process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL)!,
+      token: (process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN)!,
+    })
+  : null;
+
+const REDIS_KEY = 'psychic_db';
+const LOCAL_DB_FILE = path.join(process.cwd(), 'src/data/db.json');
+
+let memoryCache: DatabaseSchema | null = null;
+
+function getLocalFallback(): DatabaseSchema {
   try {
-    if (!fs.existsSync(DB_FILE)) {
-      throw new Error('Database file does not exist');
+    if (fs.existsSync(LOCAL_DB_FILE)) {
+      const data = fs.readFileSync(LOCAL_DB_FILE, 'utf-8');
+      return JSON.parse(data);
     }
-    const data = fs.readFileSync(DB_FILE, 'utf-8');
-    return JSON.parse(data);
   } catch (err) {
-    console.error('Error reading database file:', err);
-    return {
-      pages: [],
-      testimonials: [],
-      faqs: [],
-      settings: {
-        siteName: 'Psychic Arjun Krishna',
-        tagline: 'Best Indian Astrologer in USA',
-        phone: '+19298677866',
-        phoneDisplay: '+1 (929) 867-7866',
-        whatsapp: '+19298677866',
-        email: 'psychicarjunkrishna@gmail.com',
-        address: 'New York, USA',
-        headerAnnouncement: 'All Religions Are Welcome • Top Indian Astrologer in USA',
-        facebookUrl: '',
-        instagramUrl: '',
-        youtubeUrl: '',
-        twitterUrl: '',
-        defaultOgImage: '/images/logo.png',
-        googleAnalyticsId: '',
-        adminUser: 'admin',
-        adminPass: 'arjun2026!'
-      },
-      inquiries: []
-    };
+    console.error('Error reading local fallback db.json:', err);
+  }
+  return {
+    pages: [],
+    testimonials: [],
+    faqs: [],
+    settings: defaultSettings,
+    inquiries: [],
+  };
+}
+
+async function readDb(): Promise<DatabaseSchema> {
+  if (redis) {
+    try {
+      const remote = await redis.get<DatabaseSchema>(REDIS_KEY);
+      if (remote && remote.pages && remote.pages.length > 0) {
+        return remote;
+      }
+      // Auto seed Redis on first run
+      const seed = getLocalFallback();
+      await redis.set(REDIS_KEY, seed);
+      return seed;
+    } catch (err) {
+      console.error('Redis error during readDb, falling back to local data:', err);
+    }
+  }
+
+  if (!memoryCache) {
+    memoryCache = getLocalFallback();
+  }
+  return memoryCache;
+}
+
+async function writeDb(db: DatabaseSchema): Promise<void> {
+  memoryCache = db;
+
+  if (redis) {
+    try {
+      await redis.set(REDIS_KEY, db);
+      return;
+    } catch (err) {
+      console.error('Redis error during writeDb:', err);
+    }
+  }
+
+  // Attempt local filesystem write
+  try {
+    const tempFile = `${LOCAL_DB_FILE}.tmp.${Date.now()}`;
+    fs.writeFileSync(tempFile, JSON.stringify(db, null, 2), 'utf-8');
+    fs.renameSync(tempFile, LOCAL_DB_FILE);
+  } catch (err) {
+    // In serverless without Redis, container memory retains changes for warm requests
+    console.warn('Filesystem write skipped (read-only environment):', err);
   }
 }
 
-function writeDb(db: DatabaseSchema) {
-  const tempFile = `${DB_FILE}.tmp.${Date.now()}`;
-  fs.writeFileSync(tempFile, JSON.stringify(db, null, 2), 'utf-8');
-  fs.renameSync(tempFile, DB_FILE);
-}
-
 // Pages API
-export function getAllPages(category?: string, status?: string): DynamicPage[] {
-  const db = readDb();
+export async function getAllPages(category?: string, status?: string): Promise<DynamicPage[]> {
+  const db = await readDb();
   let pages = db.pages || [];
   if (category) {
     pages = pages.filter((p) => p.category === category);
@@ -138,27 +194,26 @@ export function getAllPages(category?: string, status?: string): DynamicPage[] {
   return pages;
 }
 
-export function getPageBySlug(slug: string): DynamicPage | null {
-  const db = readDb();
+export async function getPageBySlug(slug: string): Promise<DynamicPage | null> {
+  const db = await readDb();
   const cleanSlug = slug.replace(/\.php$/, '').replace(/^\//, '');
   return db.pages.find((p) => p.slug === cleanSlug) || null;
 }
 
-export function getPageById(id: string): DynamicPage | null {
-  const db = readDb();
+export async function getPageById(id: string): Promise<DynamicPage | null> {
+  const db = await readDb();
   return db.pages.find((p) => p.id === id) || null;
 }
 
-export function createPage(pageData: Omit<DynamicPage, 'id'> & { id?: string }): DynamicPage {
-  const db = readDb();
+export async function createPage(pageData: Omit<DynamicPage, 'id'> & { id?: string }): Promise<DynamicPage> {
+  const db = await readDb();
   const id = pageData.id || `page-${Date.now()}-${Math.random().toString(36).substring(2, 7)}`;
   const now = new Date().toISOString();
-  
-  // ensure unique slug
+
   let slug = pageData.slug.trim().toLowerCase().replace(/[^a-z0-9\-]/g, '-').replace(/-+/g, '-');
   if (slug.endsWith('-')) slug = slug.slice(0, -1);
   if (slug.startsWith('-')) slug = slug.slice(1);
-  
+
   const existing = db.pages.find((p) => p.slug === slug);
   if (existing) {
     slug = `${slug}-${Date.now().toString().slice(-4)}`;
@@ -173,18 +228,17 @@ export function createPage(pageData: Omit<DynamicPage, 'id'> & { id?: string }):
   };
 
   db.pages.unshift(newPage);
-  writeDb(db);
+  await writeDb(db);
   return newPage;
 }
 
-export function updatePage(id: string, updates: Partial<DynamicPage>): DynamicPage | null {
-  const db = readDb();
+export async function updatePage(id: string, updates: Partial<DynamicPage>): Promise<DynamicPage | null> {
+  const db = await readDb();
   const index = db.pages.findIndex((p) => p.id === id);
   if (index === -1) return null;
 
   if (updates.slug) {
     updates.slug = updates.slug.trim().toLowerCase().replace(/[^a-z0-9\-]/g, '-').replace(/-+/g, '-');
-    // check if another page uses this slug
     const conflict = db.pages.find((p) => p.id !== id && p.slug === updates.slug);
     if (conflict) {
       throw new Error(`A page with slug '${updates.slug}' already exists.`);
@@ -198,29 +252,29 @@ export function updatePage(id: string, updates: Partial<DynamicPage>): DynamicPa
   };
 
   db.pages[index] = updated;
-  writeDb(db);
+  await writeDb(db);
   return updated;
 }
 
-export function deletePage(id: string): boolean {
-  const db = readDb();
+export async function deletePage(id: string): Promise<boolean> {
+  const db = await readDb();
   const initialLength = db.pages.length;
   db.pages = db.pages.filter((p) => p.id !== id);
   if (db.pages.length !== initialLength) {
-    writeDb(db);
+    await writeDb(db);
     return true;
   }
   return false;
 }
 
 // Inquiries API
-export function getAllInquiries(): Inquiry[] {
-  const db = readDb();
+export async function getAllInquiries(): Promise<Inquiry[]> {
+  const db = await readDb();
   return db.inquiries || [];
 }
 
-export function createInquiry(data: Omit<Inquiry, 'id' | 'createdAt' | 'status'>): Inquiry {
-  const db = readDb();
+export async function createInquiry(data: Omit<Inquiry, 'id' | 'createdAt' | 'status'>): Promise<Inquiry> {
+  const db = await readDb();
   const newInquiry: Inquiry = {
     ...data,
     id: `inq-${Date.now()}`,
@@ -229,40 +283,40 @@ export function createInquiry(data: Omit<Inquiry, 'id' | 'createdAt' | 'status'>
   };
   db.inquiries = db.inquiries || [];
   db.inquiries.unshift(newInquiry);
-  writeDb(db);
+  await writeDb(db);
   return newInquiry;
 }
 
-export function updateInquiryStatus(id: string, status: Inquiry['status']): boolean {
-  const db = readDb();
+export async function updateInquiryStatus(id: string, status: Inquiry['status']): Promise<boolean> {
+  const db = await readDb();
   const inquiry = (db.inquiries || []).find((i) => i.id === id);
   if (inquiry) {
     inquiry.status = status;
-    writeDb(db);
+    await writeDb(db);
     return true;
   }
   return false;
 }
 
-export function deleteInquiry(id: string): boolean {
-  const db = readDb();
+export async function deleteInquiry(id: string): Promise<boolean> {
+  const db = await readDb();
   const prevLen = (db.inquiries || []).length;
   db.inquiries = (db.inquiries || []).filter((i) => i.id !== id);
   if (db.inquiries.length !== prevLen) {
-    writeDb(db);
+    await writeDb(db);
     return true;
   }
   return false;
 }
 
 // Testimonials API
-export function getAllTestimonials(): Testimonial[] {
-  const db = readDb();
+export async function getAllTestimonials(): Promise<Testimonial[]> {
+  const db = await readDb();
   return db.testimonials || [];
 }
 
-export function createTestimonial(data: Omit<Testimonial, 'id'>): Testimonial {
-  const db = readDb();
+export async function createTestimonial(data: Omit<Testimonial, 'id'>): Promise<Testimonial> {
+  const db = await readDb();
   const item: Testimonial = {
     ...data,
     id: `test-${Date.now()}`,
@@ -270,40 +324,39 @@ export function createTestimonial(data: Omit<Testimonial, 'id'>): Testimonial {
   };
   db.testimonials = db.testimonials || [];
   db.testimonials.unshift(item);
-  writeDb(db);
+  await writeDb(db);
   return item;
 }
 
-export function deleteTestimonial(id: string): boolean {
-  const db = readDb();
+export async function deleteTestimonial(id: string): Promise<boolean> {
+  const db = await readDb();
   const prevLen = (db.testimonials || []).length;
   db.testimonials = (db.testimonials || []).filter((t) => t.id !== id);
   if (db.testimonials.length !== prevLen) {
-    writeDb(db);
+    await writeDb(db);
     return true;
   }
   return false;
 }
 
 // Settings API
-export function getSettings(): SiteSettings {
-  const db = readDb();
+export async function getSettings(): Promise<SiteSettings> {
+  const db = await readDb();
   return db.settings;
 }
 
-export function updateSettings(updates: Partial<SiteSettings>): SiteSettings {
-  const db = readDb();
+export async function updateSettings(updates: Partial<SiteSettings>): Promise<SiteSettings> {
+  const db = await readDb();
   db.settings = {
     ...db.settings,
     ...updates,
   };
-  writeDb(db);
+  await writeDb(db);
   return db.settings;
 }
 
 // FAQs API
-export function getFaqs(): FaqItem[] {
-  const db = readDb();
+export async function getFaqs(): Promise<FaqItem[]> {
+  const db = await readDb();
   return db.faqs || [];
 }
-

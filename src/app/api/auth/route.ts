@@ -5,7 +5,7 @@ import { getSettings } from '@/lib/db';
 export async function POST(req: Request) {
   try {
     const { username, password } = await req.json();
-    const settings = getSettings();
+    const settings = await getSettings();
 
     const expectedUser = settings.adminUser || 'admin';
     const expectedPass = settings.adminPass || 'arjun2026!';
@@ -40,4 +40,3 @@ export async function GET() {
   const session = cookieStore.get('admin_session');
   return NextResponse.json({ authenticated: session?.value === 'authenticated' });
 }
-

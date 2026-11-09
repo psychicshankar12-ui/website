@@ -3,7 +3,7 @@ import { getAllInquiries, createInquiry, updateInquiryStatus, deleteInquiry } fr
 
 export async function GET() {
   try {
-    const inquiries = getAllInquiries();
+    const inquiries = await getAllInquiries();
     return NextResponse.json({ success: true, inquiries });
   } catch (error) {
     return NextResponse.json({ success: false, error: 'Failed to fetch inquiries' }, { status: 500 });
@@ -19,7 +19,7 @@ export async function POST(req: Request) {
       return NextResponse.json({ success: false, error: 'Name and Phone are required' }, { status: 400 });
     }
 
-    const inquiry = createInquiry({
+    const inquiry = await createInquiry({
       name,
       email: email || '',
       phone,
@@ -41,7 +41,7 @@ export async function PATCH(req: Request) {
     if (!id || !status) {
       return NextResponse.json({ success: false, error: 'ID and status required' }, { status: 400 });
     }
-    const updated = updateInquiryStatus(id, status);
+    const updated = await updateInquiryStatus(id, status);
     return NextResponse.json({ success: updated });
   } catch (error) {
     return NextResponse.json({ success: false, error: 'Failed to update inquiry' }, { status: 500 });
@@ -55,10 +55,9 @@ export async function DELETE(req: Request) {
     if (!id) {
       return NextResponse.json({ success: false, error: 'ID is required' }, { status: 400 });
     }
-    const deleted = deleteInquiry(id);
+    const deleted = await deleteInquiry(id);
     return NextResponse.json({ success: deleted });
   } catch (error) {
     return NextResponse.json({ success: false, error: 'Failed to delete inquiry' }, { status: 500 });
   }
 }
-

@@ -3,7 +3,7 @@ import { getAllPages } from '@/lib/db';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://www.psychicarjunkrishna.com';
-  const pages = getAllPages(undefined, 'published');
+  const pages = await getAllPages(undefined, 'published');
 
   const staticRoutes: MetadataRoute.Sitemap = [
     {

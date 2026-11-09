@@ -12,7 +12,7 @@ import FloatingButtons from '@/components/FloatingButtons';
 
 
 export async function generateMetadata(): Promise<Metadata> {
-  const settings = getSettings();
+  const settings = await getSettings();
   return {
     title: `About Us | Best Vedic Indian Astrologer in USA - ${settings.siteName}`,
     description:
@@ -23,12 +23,12 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function AboutPage() {
-  const settings = getSettings();
-  const allPages = getAllPages();
+export default async function AboutPage() {
+  const settings = await getSettings();
+  const allPages = await getAllPages();
   const services = allPages.filter((p) => p.category === 'service' && p.status === 'published');
   const locations = allPages.filter((p) => p.category === 'location' && p.status === 'published');
-  const testimonials = getAllTestimonials();
+  const testimonials = await getAllTestimonials();
 
   return (
     <div className="min-h-screen flex flex-col cosmic-bg text-slate-100">

@@ -17,7 +17,7 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  const pages = getAllPages(undefined, 'published');
+  const pages = await getAllPages(undefined, 'published');
   return pages.map((page) => ({
     slug: page.slug,
   }));
@@ -25,8 +25,8 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const page = getPageBySlug(slug);
-  const settings = getSettings();
+  const page = await getPageBySlug(slug);
+  const settings = await getSettings();
 
   if (!page) {
     return {
@@ -65,14 +65,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function DynamicPageRoute({ params }: PageProps) {
   const { slug } = await params;
-  const page = getPageBySlug(slug);
+  const page = await getPageBySlug(slug);
 
   if (!page) {
     notFound();
   }
 
-  const settings = getSettings();
-  const allPages = getAllPages();
+  const settings = await getSettings();
+  const allPages = await getAllPages();
   const services = allPages.filter((p) => p.category === 'service' && p.status === 'published');
   const locations = allPages.filter((p) => p.category === 'location' && p.status === 'published');
   const customPages = allPages.filter((p) => p.category === 'custom' && p.status === 'published');

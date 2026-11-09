@@ -3,7 +3,7 @@ import { getAllTestimonials, createTestimonial, deleteTestimonial } from '@/lib/
 
 export async function GET() {
   try {
-    const testimonials = getAllTestimonials();
+    const testimonials = await getAllTestimonials();
     return NextResponse.json({ success: true, testimonials });
   } catch (error) {
     return NextResponse.json({ success: false, error: 'Failed to fetch testimonials' }, { status: 500 });
@@ -17,7 +17,7 @@ export async function POST(req: Request) {
     if (!name || !review) {
       return NextResponse.json({ success: false, error: 'Name and review are required' }, { status: 400 });
     }
-    const item = createTestimonial({
+    const item = await createTestimonial({
       name,
       location: location || 'USA',
       rating: Number(rating) || 5,
@@ -37,10 +37,9 @@ export async function DELETE(req: Request) {
     if (!id) {
       return NextResponse.json({ success: false, error: 'ID is required' }, { status: 400 });
     }
-    const deleted = deleteTestimonial(id);
+    const deleted = await deleteTestimonial(id);
     return NextResponse.json({ success: deleted });
   } catch (error) {
     return NextResponse.json({ success: false, error: 'Failed to delete testimonial' }, { status: 500 });
   }
 }
-
