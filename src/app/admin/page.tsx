@@ -68,8 +68,8 @@ export default function AdminDashboard() {
     category: 'custom',
     bannerTitle: '',
     bannerSubtitle: '',
-    bannerImage: '/images/herobanner/ban01.png',
-    featuredImage: '/images/our_service_img/v2/pro_im_1.png',
+    bannerImage: '/images/herobanner/ban01-20261109.webp',
+    featuredImage: '/images/our_service_img/v2/pro_im_1-20261109.webp',
     shortExcerpt: '',
     content: '',
     videoUrl: '',
@@ -380,7 +380,7 @@ export default function AdminDashboard() {
           <div className="text-center mb-8">
             <div className="relative w-48 h-12 mx-auto mb-4">
               <Image
-                src="/images/logo.png"
+                src="/images/logo-20261109.webp"
                 alt="Psychic Shankar"
                 fill
                 className="object-contain"
@@ -462,7 +462,7 @@ export default function AdminDashboard() {
           <div className="flex items-center space-x-3">
             <div className="relative w-36 h-10">
               <Image
-                src="/images/logo.png"
+                src="/images/logo-20261109.webp"
                 alt="Psychic Shankar"
                 fill
                 className="object-contain object-left"
@@ -1156,7 +1156,7 @@ export default function AdminDashboard() {
                         type="text"
                         value={formData.featuredImage || ''}
                         onChange={(e) => setFormData({ ...formData, featuredImage: e.target.value })}
-                        placeholder="/images/our_service_img/v2/pro_im_1.png"
+                        placeholder="/images/our_service_img/v2/pro_im_1-20261109.webp"
                         className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded-xl text-xs text-white"
                       />
                     </div>

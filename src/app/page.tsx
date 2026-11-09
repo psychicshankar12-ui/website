@@ -35,7 +35,7 @@ export async function generateMetadata(): Promise<Metadata> {
       siteName: settings.siteName,
       images: [
         {
-          url: settings.defaultOgImage || '/images/logo.png',
+          url: settings.defaultOgImage || '/images/logo-20261109.webp',
           width: 800,
           height: 600,
           alt: settings.siteName,
@@ -69,13 +69,16 @@ export default async function HomePage() {
         email: settings.email,
         address: {
           '@type': 'PostalAddress',
+          streetAddress: '2900 W Sample Rd #2243',
+          addressLocality: 'Pompano Beach',
+          addressRegion: 'FL',
+          postalCode: '33073',
           addressCountry: 'US',
-          addressLocality: 'New York',
         },
         priceRange: '$$',
         openingHours: 'Mo-Su 00:00-24:00',
         url: 'https://www.psychicshankar.com',
-        image: 'https://www.psychicshankar.com/images/logo.png',
+        image: 'https://www.psychicshankar.com/images/logo-20261109.webp',
       },
       {
         '@type': 'Person',
@@ -130,7 +133,7 @@ export default async function HomePage() {
               <div className="lg:col-span-5 relative">
                 <div className="relative w-full h-[400px] sm:h-[480px] rounded-3xl overflow-hidden border-2 border-amber-400/40 shadow-2xl shadow-purple-950/60">
                   <Image
-                    src="/images/seo/v2/about_img3.webp"
+                    src="/images/seo/v2/about_img3-20261109.webp"
                     alt="Psychic Shankar Expert in Indian Astrology"
                     fill
                     className="object-cover object-top"

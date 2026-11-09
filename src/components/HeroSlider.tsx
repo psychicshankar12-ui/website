@@ -12,48 +12,48 @@ interface HeroSliderProps {
 
 const slides = [
   {
-    desktop: '/images/herobanner/v2/banner_01.png',
-    mobile: '/images/herobanner/v2/mobile_01.png',
+    desktop: '/images/herobanner/v2/banner_01-20261109.webp',
+    mobile: '/images/herobanner/v2/mobile_01-20261109.webp',
     title: 'No.1 Indian Best Astrologer & Psychic Spiritual Healer',
     subtitle: 'Healing, Family Problems, Psychic Readings, Work Success, Business Growth',
     tag: '100% Guaranteed & Confidential',
     ctaText: 'Reunite With Loved Ones'
   },
   {
-    desktop: '/images/herobanner/v2/banner_02.png',
-    mobile: '/images/herobanner/v2/mobile_02.png',
+    desktop: '/images/herobanner/v2/banner_02-20261109.webp',
+    mobile: '/images/herobanner/v2/mobile_02-20261109.webp',
     title: 'Specialist in Love Psychic Reading & Relationships',
     subtitle: 'Privacy & Confidentiality Throughout the Reading, Solve All Your Problems',
     tag: '25+ Years Lineage of Vedic Mastery',
     ctaText: 'Get Your Ex Love Back'
   },
   {
-    desktop: '/images/herobanner/v2/banner_03.png',
-    mobile: '/images/herobanner/v2/mobile_03.png',
+    desktop: '/images/herobanner/v2/banner_03-20261109.webp',
+    mobile: '/images/herobanner/v2/mobile_03-20261109.webp',
     title: 'Black Magic & Evil Spirit Removal Specialist',
     subtitle: 'Break Generational Curses, Hexes, Negative Energy & Harmful Influences',
     tag: 'Instant Spiritual Protection',
     ctaText: 'Protect Your Family Now'
   },
   {
-    desktop: '/images/herobanner/v2/banner_04.png',
-    mobile: '/images/herobanner/v2/mobile_04.png',
+    desktop: '/images/herobanner/v2/banner_04-20261109.webp',
+    mobile: '/images/herobanner/v2/mobile_04-20261109.webp',
     title: 'Husband & Wife Relationship Dispute Specialist',
     subtitle: 'Restore Sacred Love, Deep Passion, Loyalty & Lifelong Understanding',
     tag: 'Stop Separation & Divorce',
     ctaText: 'Save Your Marriage'
   },
   {
-    desktop: '/images/herobanner/v2/banner_05.png',
-    mobile: '/images/herobanner/v2/mobile_05.png',
+    desktop: '/images/herobanner/v2/banner_05-20261109.webp',
+    mobile: '/images/herobanner/v2/mobile_05-20261109.webp',
     title: 'Spiritual Healing & Negative Energy Removal',
     subtitle: 'Cleanse Negative Aura, Restore Harmony, Peace & Divine Blessings',
     tag: 'Urgent Crisis Support',
     ctaText: 'Cleanse Negative Aura'
   },
   {
-    desktop: '/images/herobanner/v2/banner_06.png',
-    mobile: '/images/herobanner/v2/mobile_06.png',
+    desktop: '/images/herobanner/v2/banner_06-20261109.webp',
+    mobile: '/images/herobanner/v2/mobile_06-20261109.webp',
     title: 'World Famous Astrologer & Psychic Reader',
     subtitle: 'Accurate Palm, Face & Horoscope Readings with Immediate Authentic Remedies',
     tag: 'Over 15,000+ Satisfied Clients',
@@ -80,9 +80,8 @@ export default function HeroSlider({ settings }: HeroSliderProps) {
       {slides.map((slide, idx) => (
         <div
           key={idx}
-          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-            idx === current ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
-          }`}
+          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${idx === current ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
+            }`}
         >
           {/* Desktop Slide Background */}
           <div className="hidden sm:block relative w-full h-full">
@@ -120,7 +119,7 @@ export default function HeroSlider({ settings }: HeroSliderProps) {
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight drop-shadow-lg">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight drop-shadow-lg">
             {slides[current].title} <span className="gold-gradient-text">| {settings.siteName}</span>
           </h1>
 
@@ -197,9 +196,8 @@ export default function HeroSlider({ settings }: HeroSliderProps) {
           <button
             key={idx}
             onClick={() => setCurrent(idx)}
-            className={`h-2 sm:h-2.5 rounded-full transition-all cursor-pointer ${
-              idx === current ? 'w-8 bg-amber-400 shadow-lg shadow-amber-400/50' : 'w-2.5 bg-white/40 hover:bg-white/80'
-            }`}
+            className={`h-2 sm:h-2.5 rounded-full transition-all cursor-pointer ${idx === current ? 'w-8 bg-amber-400 shadow-lg shadow-amber-400/50' : 'w-2.5 bg-white/40 hover:bg-white/80'
+              }`}
             aria-label={`Go to slide ${idx + 1}`}
           />
         ))}

@@ -107,7 +107,7 @@ export default function Header({ settings, services, locations, customPages = []
           <Link href="/" className="flex items-center space-x-3 group">
             <div className="relative w-48 sm:w-56 h-12 sm:h-14">
               <Image
-                src="/images/logo.png"
+                src="/images/logo-20261109.webp"
                 alt="Psychic Shankar"
                 fill
                 className="object-contain object-left"

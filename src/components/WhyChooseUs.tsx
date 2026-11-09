@@ -10,14 +10,14 @@ interface WhyChooseUsProps {
 }
 
 const features = [
-  { img: '/images/sp_fea_01.png', title: '25+ Years Experience', desc: 'Distinguished Vedic lineage and decades of proven spiritual mastery.' },
-  { img: '/images/sp_fea_02.png', title: '15,000+ Happy Clients', desc: 'Over fifteen thousand lives transformed across the USA and worldwide.' },
-  { img: '/images/sp_fea_03.png', title: '100% Confidential', desc: 'Absolute privacy guaranteed. Your discussions remain strictly confidential.' },
-  { img: '/images/sp_fea_04.png', title: 'Accurate Predictions', desc: 'Precise planetary calculations and intuitive clairvoyant readings.' },
-  { img: '/images/sp_fea_05.png', title: 'Rapid Astrological Remedies', desc: 'Sacred Sanskrit mantras, protective amulets, and effective pujas.' },
-  { img: '/images/sp_fea_06.png', title: '24/7 Available On Call', desc: 'Urgent crisis support via direct telephone and video call.' },
-  { img: '/images/sp_fea_07.png', title: 'All Religions Welcome', desc: 'Compassionate, open-hearted guidance for all backgrounds and beliefs.' },
-  { img: '/images/sp_fea_08.png', title: 'Guaranteed Results', desc: 'Dedicated spiritual rituals until harmony and success are restored.' },
+  { img: '/images/sp_fea_01-20261109.webp', title: '25+ Years Experience', desc: 'Distinguished Vedic lineage and decades of proven spiritual mastery.' },
+  { img: '/images/sp_fea_02-20261109.webp', title: '15,000+ Happy Clients', desc: 'Over fifteen thousand lives transformed across the USA and worldwide.' },
+  { img: '/images/sp_fea_03-20261109.webp', title: '100% Confidential', desc: 'Absolute privacy guaranteed. Your discussions remain strictly confidential.' },
+  { img: '/images/sp_fea_04-20261109.webp', title: 'Accurate Predictions', desc: 'Precise planetary calculations and intuitive clairvoyant readings.' },
+  { img: '/images/sp_fea_05-20261109.webp', title: 'Rapid Astrological Remedies', desc: 'Sacred Sanskrit mantras, protective amulets, and effective pujas.' },
+  { img: '/images/sp_fea_06-20261109.webp', title: '24/7 Available On Call', desc: 'Urgent crisis support via direct telephone and video call.' },
+  { img: '/images/sp_fea_07-20261109.webp', title: 'All Religions Welcome', desc: 'Compassionate, open-hearted guidance for all backgrounds and beliefs.' },
+  { img: '/images/sp_fea_08-20261109.webp', title: 'Guaranteed Results', desc: 'Dedicated spiritual rituals until harmony and success are restored.' },
 ];
 
 export default function WhyChooseUs({ settings }: WhyChooseUsProps) {

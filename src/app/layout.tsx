@@ -15,8 +15,8 @@ export const metadata: Metadata = {
   keywords: 'Indian Astrologer, Psychic Shankar, Love Psychic Reader, USA Astrologer, Black Magic Specialist',
   metadataBase: new URL('https://www.psychicshankar.com'),
   icons: {
-    icon: '/images/logo.png',
-    apple: '/images/logo.png',
+    icon: '/images/logo-20261109.webp',
+    apple: '/images/logo-20261109.webp',
   },
 };
 

@@ -63,7 +63,7 @@ export default function TestimonialsSection({ testimonials }: TestimonialsSectio
           <div className="mt-8 pt-6 border-t border-purple-900/40 flex justify-center items-center space-x-3">
             <div className="relative w-48 h-14 transition-transform duration-300 hover:scale-105">
               <Image
-                src="/images/seo/v2/google_cus_review_btn.webp"
+                src="/images/seo/v2/google_cus_review_btn-20261109.webp"
                 alt="Google Customer Reviews"
                 fill
                 sizes="192px"

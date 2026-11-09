@@ -29,7 +29,7 @@ export default function Footer({ settings, services }: FooterProps) {
           <div className="space-y-4">
             <div className="relative w-48 h-14">
               <Image
-                src="/images/footer_logo.png"
+                src="/images/footer_logo-20261109.webp"
                 alt="Psychic Shankar"
                 fill
                 className="object-contain object-left"
