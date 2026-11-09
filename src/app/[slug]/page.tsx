@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: page.metaTitle || `${page.title} | ${settings.siteName}`,
     description: page.metaDescription || page.shortExcerpt,
-    keywords: page.metaKeywords || `${page.title}, Indian Astrologer, Psychic Arjun Krishna`,
+    keywords: page.metaKeywords || `${page.title}, Indian Astrologer, Psychic Shankar`,
     alternates: {
       canonical: page.canonicalUrl || `/${page.slug}`,
     },
@@ -91,11 +91,11 @@ export default async function DynamicPageRoute({ params }: PageProps) {
         description: page.metaDescription || page.shortExcerpt,
         provider: {
           '@type': 'Person',
-          name: 'Psychic Arjun Krishna',
+          name: 'Psychic Shankar',
           telephone: settings.phone,
           email: settings.email,
         },
-        url: `https://www.psychicarjunkrishna.com/${page.slug}`,
+        url: `https://www.psychicshankar.com/${page.slug}`,
         ...(isLocation && {
           address: {
             '@type': 'PostalAddress',
@@ -137,7 +137,7 @@ export default async function DynamicPageRoute({ params }: PageProps) {
 
           <div className="max-w-3xl space-y-3">
             <span className="inline-block text-xs font-bold uppercase tracking-wider text-amber-400 bg-amber-400/10 px-3 py-1 rounded-full border border-amber-400/20">
-              {page.category === 'location' ? 'US Astrological Service Location' : 'Psychic Arjun Krishna'}
+              {page.category === 'location' ? 'US Astrological Service Location' : 'Psychic Shankar'}
             </span>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white leading-tight">
               {page.bannerTitle || page.title}
@@ -194,7 +194,7 @@ export default async function DynamicPageRoute({ params }: PageProps) {
               {/* In-content CTA */}
               <div className="mt-8 bg-gradient-to-r from-purple-950 via-[#1d1645] to-slate-900 border border-amber-400/30 rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
                 <div>
-                  <h4 className="text-lg font-bold text-white">Connect Directly with Psychic Arjun Krishna</h4>
+                  <h4 className="text-lg font-bold text-white">Connect Directly with Psychic Shankar</h4>
                   <p className="text-xs text-slate-300 mt-1">Get urgent spiritual answers live over phone or video.</p>
                 </div>
                 <a
@@ -253,7 +253,7 @@ export default async function DynamicPageRoute({ params }: PageProps) {
                 </span>
                 <h4 className="text-lg font-black text-white">Have an Urgent Emergency?</h4>
                 <p className="text-xs text-slate-300">
-                  Speak directly with master astrologer Psychic Arjun Krishna right away.
+                  Speak directly with master astrologer Psychic Shankar right away.
                 </p>
                 <div className="pt-2 flex flex-col space-y-2">
                   <a
@@ -264,7 +264,7 @@ export default async function DynamicPageRoute({ params }: PageProps) {
                     <span>Call: {settings.phoneDisplay}</span>
                   </a>
                   <a
-                    href={`https://wa.me/${settings.whatsapp}?text=Hello%20Psychic%20Arjun%20Krishna,%20I%20am%20inquiring%20about%20${encodeURIComponent(
+                    href={`https://wa.me/${settings.whatsapp}?text=Hello%20Psychic%20Shankar,%20I%20am%20inquiring%20about%20${encodeURIComponent(
                       page.title
                     )}`}
                     target="_blank"

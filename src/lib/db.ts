@@ -83,12 +83,12 @@ interface DatabaseSchema {
 }
 
 const defaultSettings: SiteSettings = {
-  siteName: 'Psychic Arjun Krishna',
+  siteName: 'Psychic Shankar',
   tagline: 'Best Indian Astrologer in USA',
   phone: '+19298677866',
   phoneDisplay: '+1 (929) 867-7866',
   whatsapp: '+19298677866',
-  email: 'psychicarjunkrishna@gmail.com',
+  email: 'psychicshankar12@gmail.com',
   address: 'New York, USA',
   headerAnnouncement: 'All Religions Are Welcome • Top Indian Astrologer in USA',
   facebookUrl: '',
@@ -98,7 +98,7 @@ const defaultSettings: SiteSettings = {
   defaultOgImage: '/images/logo.png',
   googleAnalyticsId: '',
   adminUser: 'admin',
-  adminPass: 'arjun2026!',
+  adminPass: 'shankar2026!',
 };
 
 const hasRedis = Boolean(
@@ -108,9 +108,9 @@ const hasRedis = Boolean(
 
 const redis = hasRedis
   ? new Redis({
-      url: (process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL)!,
-      token: (process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN)!,
-    })
+    url: (process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL)!,
+    token: (process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN)!,
+  })
   : null;
 
 const REDIS_KEY = 'psychic_db';

@@ -35,7 +35,7 @@ export default function ServiceCard({ service, settings }: ServiceCardProps) {
             {service.title}
           </h3>
           <p className="text-xs sm:text-sm text-slate-300 leading-relaxed line-clamp-3 mb-4">
-            {service.shortExcerpt || 'Overcome this difficulty with the guidance of master Indian Astrologer Psychic Arjun Krishna.'}
+            {service.shortExcerpt || 'Overcome this difficulty with the guidance of master Indian Astrologer Psychic Shankar.'}
           </p>
         </div>
 

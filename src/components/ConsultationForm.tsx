@@ -66,7 +66,7 @@ export default function ConsultationForm({
         <CheckCircle className="w-12 h-12 text-emerald-400 mx-auto mb-3" />
         <h4 className="text-xl font-bold text-amber-300 mb-2">Consultation Request Received!</h4>
         <p className="text-sm text-slate-300 mb-4">
-          Thank you, <strong>{formData.name}</strong>. Psychic Arjun Krishna has received your details and will connect with you shortly for a confidential reading.
+          Thank you, <strong>{formData.name}</strong>. Psychic Shankar has received your details and will connect with you shortly for a confidential reading.
         </p>
         <div className="flex flex-col sm:flex-row gap-2 justify-center pt-2">
           <a
@@ -77,7 +77,7 @@ export default function ConsultationForm({
             <span>Call Now: {settings.phoneDisplay}</span>
           </a>
           <a
-            href={`https://wa.me/${settings.whatsapp}?text=Hello%20Psychic%20Arjun%20Krishna,%20I%20just%20submitted%20a%20consultation%20form%20for%20${encodeURIComponent(
+            href={`https://wa.me/${settings.whatsapp}?text=Hello%20Psychic%20Shankar,%20I%20just%20submitted%20a%20consultation%20form%20for%20${encodeURIComponent(
               formData.service
             )}`}
             target="_blank"
@@ -106,7 +106,7 @@ export default function ConsultationForm({
           CONSULT NOW
         </h3>
         <p className="text-xs md:text-sm text-slate-300">
-          Book Your Live Phone / Video Astrology Reading with Psychic Arjun Krishna
+          Book Your Live Phone / Video Astrology Reading with Psychic Shankar
         </p>
       </div>
 
@@ -205,7 +205,7 @@ export default function ConsultationForm({
             rows={compact ? 2 : 3}
             value={formData.message}
             onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-            placeholder="Tell Psychic Arjun Krishna about your problem in detail..."
+            placeholder="Tell Psychic Shankar about your problem in detail..."
             className="w-full px-3.5 py-2 bg-slate-900/80 border border-slate-700 focus:border-amber-400 focus:ring-1 focus:ring-amber-400 rounded-xl text-sm text-white placeholder-slate-500 outline-none transition resize-none"
           />
         </div>

@@ -27,7 +27,7 @@ const slides = [
   },
   {
     image: '/images/herobanner/ban03.png',
-    title: 'World Famous Astrologer Psychic Arjun Krishna',
+    title: 'World Famous Astrologer Psychic Shankar',
     subtitle: 'Ex Return, Marriage Break, Guaranteed Results, Available 24/7 Across USA',
     tag: 'Over 15,000+ Satisfied Clients Worldwide',
     ctaText: 'Free Initial Assessment'
@@ -140,7 +140,7 @@ export default function HeroSlider({ settings }: HeroSliderProps) {
             </a>
 
             <a
-              href={`https://wa.me/${settings.whatsapp}?text=Hello%20Psychic%20Arjun%20Krishna,%20I%20need%20urgent%20astrological%20help.`}
+              href={`https://wa.me/${settings.whatsapp}?text=Hello%20Psychic%20Shankar,%20I%20need%20urgent%20astrological%20help.`}
               target="_blank"
               rel="noopener noreferrer"
               className="px-5 py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm md:text-base rounded-xl flex items-center space-x-2 shadow-xl shadow-emerald-900/30 transition transform hover:-translate-y-0.5"

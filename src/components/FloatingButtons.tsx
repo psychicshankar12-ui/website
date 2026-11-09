@@ -15,7 +15,7 @@ export default function FloatingButtons({ settings }: FloatingButtonsProps) {
       <div className="fixed right-5 bottom-20 z-40 hidden sm:flex flex-col space-y-3">
         {/* WhatsApp Button */}
         <a
-          href={`https://wa.me/${settings.whatsapp}?text=Hello%20Psychic%20Arjun%20Krishna,%20I%20would%20like%20to%20book%20a%20consultation.`}
+          href={`https://wa.me/${settings.whatsapp}?text=Hello%20Psychic%20Shankar,%20I%20would%20like%20to%20book%20a%20consultation.`}
           target="_blank"
           rel="noopener noreferrer"
           className="w-13 h-13 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white flex items-center justify-center shadow-2xl shadow-emerald-500/40 hover:scale-110 transition-transform group relative cursor-pointer"
@@ -51,7 +51,7 @@ export default function FloatingButtons({ settings }: FloatingButtonsProps) {
         </a>
 
         <a
-          href={`https://wa.me/${settings.whatsapp}?text=Hello%20Psychic%20Arjun%20Krishna`}
+          href={`https://wa.me/${settings.whatsapp}?text=Hello%20Psychic%20Shankar`}
           target="_blank"
           rel="noopener noreferrer"
           className="py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-xl flex items-center justify-center space-x-1 shadow"

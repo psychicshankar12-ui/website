@@ -108,7 +108,7 @@ export default function Header({ settings, services, locations, customPages = []
             <div className="relative w-48 sm:w-56 h-12 sm:h-14">
               <Image
                 src="/images/logo.png"
-                alt="Psychic Arjun Krishna"
+                alt="Psychic Shankar"
                 fill
                 className="object-contain object-left"
                 priority
@@ -236,7 +236,7 @@ export default function Header({ settings, services, locations, customPages = []
           {/* Quick Call & CTA */}
           <div className="hidden md:flex items-center space-x-3">
             <a
-              href={`https://wa.me/${settings.whatsapp}?text=Hello%20Psychic%20Arjun%20Krishna,%20I%20would%20like%20to%20book%20a%20consultation.`}
+              href={`https://wa.me/${settings.whatsapp}?text=Hello%20Psychic%20Shankar,%20I%20would%20like%20to%20book%20a%20consultation.`}
               target="_blank"
               rel="noopener noreferrer"
               className="px-3 py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg font-bold text-xs flex items-center space-x-1.5 shadow-lg shadow-emerald-900/30 transition transform hover:scale-105"
@@ -356,7 +356,7 @@ export default function Header({ settings, services, locations, customPages = []
                 <span>Call {settings.phoneDisplay}</span>
               </a>
               <a
-                href={`https://wa.me/${settings.whatsapp}?text=Hello%20Psychic%20Arjun%20Krishna`}
+                href={`https://wa.me/${settings.whatsapp}?text=Hello%20Psychic%20Shankar`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-lg text-center flex items-center justify-center space-x-2"

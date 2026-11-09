@@ -14,7 +14,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: `Contact Us | Contact Indian Best Astrologer in USA - ${settings.siteName}`,
     description:
-      'Contact Psychic Arjun Krishna for 100% confidential and authentic Vedic astrology readings, love problem solutions, and spiritual healing. Call or WhatsApp now.',
+      'Contact Psychic Shankar for 100% confidential and authentic Vedic astrology readings, love problem solutions, and spiritual healing. Call or WhatsApp now.',
     alternates: {
       canonical: '/contactus',
     },
@@ -37,7 +37,7 @@ export default async function ContactPage() {
           GET IN TOUCH
         </span>
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mt-3 mb-2">
-          Contact <span className="gold-gradient-text">Psychic Arjun Krishna</span>
+          Contact <span className="gold-gradient-text">Psychic Shankar</span>
         </h1>
         <p className="text-sm md:text-base text-slate-300 max-w-xl mx-auto">
           Available 24/7 for Phone, Video & In-Person Spiritual Astrology Consultations
@@ -73,7 +73,7 @@ export default async function ContactPage() {
 
                 {/* WhatsApp */}
                 <a
-                  href={`https://wa.me/${settings.whatsapp}?text=Hello%20Psychic%20Arjun%20Krishna,%20I%20would%20like%20to%20book%20a%20consultation.`}
+                  href={`https://wa.me/${settings.whatsapp}?text=Hello%20Psychic%20Shankar,%20I%20would%20like%20to%20book%20a%20consultation.`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center space-x-3 p-4 rounded-2xl bg-slate-950/70 border border-slate-800 hover:border-emerald-400/50 transition group"

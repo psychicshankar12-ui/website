@@ -54,7 +54,7 @@ export default function WhyChooseUs({ settings }: WhyChooseUsProps) {
             ACHIEVEMENTS IN ASTROLOGY
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mt-3 mb-4">
-            Why Choose <span className="gold-gradient-text">Psychic Arjun Krishna</span>?
+            Why Choose <span className="gold-gradient-text">Psychic Shankar</span>?
           </h2>
           <p className="text-sm md:text-base text-slate-300">
             Renowned worldwide for genuine psychic abilities, accurate horoscope analysis, and life-changing spiritual solutions.

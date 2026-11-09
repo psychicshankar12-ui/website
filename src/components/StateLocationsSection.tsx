@@ -27,7 +27,7 @@ export default function StateLocationsSection({ locations }: StateLocationsSecti
             Astrology Services <span className="gold-gradient-text">Across All 50 US States</span>
           </h2>
           <p className="text-sm md:text-base text-slate-300">
-            Psychic Arjun Krishna provides trusted astrology, psychic readings, and spiritual remedies to clients in every state across the United States.
+            Psychic Shankar provides trusted astrology, psychic readings, and spiritual remedies to clients in every state across the United States.
           </p>
 
           {/* Search bar */}

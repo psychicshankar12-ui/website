@@ -184,7 +184,7 @@ export default function AdminDashboard() {
       const slugVal = val.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
       updates.slug = slugVal;
       updates.bannerTitle = val;
-      updates.metaTitle = `${val} | Psychic Arjun Krishna`;
+      updates.metaTitle = `${val} | Psychic Shankar`;
       updates.canonicalUrl = `/${slugVal}`;
     }
     setFormData((prev) => ({ ...prev, ...updates }));
@@ -198,9 +198,9 @@ export default function AdminDashboard() {
         category: 'service',
         schemaType: 'Service',
         bannerSubtitle: 'Fast, Effective & 100% Confidential Vedic Astrology Remedies',
-        shortExcerpt: `Overcome difficult challenges with authentic spiritual prayers and astrology solutions by Psychic Arjun Krishna.`,
-        content: `<h3>Why Consult Psychic Arjun Krishna For ${prev.title || 'This Problem'}?</h3>
-<p>Over the past 25 years, master astrologer Psychic Arjun Krishna has assisted countless individuals in resolving deep karmic blockages, restoring peace of mind, and reuniting broken bonds.</p>
+        shortExcerpt: `Overcome difficult challenges with authentic spiritual prayers and astrology solutions by Psychic Shankar.`,
+        content: `<h3>Why Consult Psychic Shankar For ${prev.title || 'This Problem'}?</h3>
+<p>Over the past 25 years, master astrologer Psychic Shankar has assisted countless individuals in resolving deep karmic blockages, restoring peace of mind, and reuniting broken bonds.</p>
 <h4>How Our Vedic Remedies Work</h4>
 <p>Through precise natal chart reading and sacred rituals, negative energies are dissolved, bringing clarity, positive attraction, and lasting stability.</p>
 <ul>
@@ -208,7 +208,7 @@ export default function AdminDashboard() {
   <li>Immediate Phone & Video Consultations</li>
   <li>Customized Gemstones, Mantras & Pujas</li>
 </ul>`,
-        metaDescription: `Best ${prev.title || 'Astrology Service'} in USA by Psychic Arjun Krishna. Authentic Vedic remedies with 100% guaranteed confidentiality.`,
+        metaDescription: `Best ${prev.title || 'Astrology Service'} in USA by Psychic Shankar. Authentic Vedic remedies with 100% guaranteed confidentiality.`,
         metaKeywords: `${prev.title}, astrologer usa, psychic reading, spiritual healing remedies`,
       }));
     } else {
@@ -217,9 +217,9 @@ export default function AdminDashboard() {
         category: 'location',
         schemaType: 'LocalBusiness',
         bannerSubtitle: `Top Indian Astrologer & Spiritual Healer in ${prev.title || 'Your Area'}`,
-        shortExcerpt: `Looking for the best Indian Astrologer in ${prev.title || 'this location'}? Psychic Arjun Krishna provides trusted astrology consultations.`,
+        shortExcerpt: `Looking for the best Indian Astrologer in ${prev.title || 'this location'}? Psychic Shankar provides trusted astrology consultations.`,
         content: `<h3>Trusted Vedic Astrology in ${prev.title || 'Your City'}</h3>
-<p>Residents have experienced life-changing results with the guidance of world-renowned Indian Astrologer Psychic Arjun Krishna. From love problems to black magic removal and business growth, get authentic answers today.</p>
+<p>Residents have experienced life-changing results with the guidance of world-renowned Indian Astrologer Psychic Shankar. From love problems to black magic removal and business growth, get authentic answers today.</p>
 <h4>Services Available Locally:</h4>
 <ul>
   <li>Love Relationship Problem Solutions</li>
@@ -227,7 +227,7 @@ export default function AdminDashboard() {
   <li>Black Magic, Evil Eye & Curse Removal</li>
   <li>Accurate Palmistry & Clairvoyant Readings</li>
 </ul>`,
-        metaDescription: `Best Indian Astrologer in ${prev.title || 'USA'}. Trusted Vedic astrology, psychic readings, and love problem remedies by Psychic Arjun Krishna.`,
+        metaDescription: `Best Indian Astrologer in ${prev.title || 'USA'}. Trusted Vedic astrology, psychic readings, and love problem remedies by Psychic Shankar.`,
         metaKeywords: `astrologer in ${prev.title}, indian astrologer, psychic reader, love back expert`,
       }));
     }
@@ -374,7 +374,7 @@ export default function AdminDashboard() {
             <div className="relative w-48 h-12 mx-auto mb-4">
               <Image
                 src="/images/logo.png"
-                alt="Psychic Arjun Krishna"
+                alt="Psychic Shankar"
                 fill
                 className="object-contain"
               />
@@ -422,7 +422,7 @@ export default function AdminDashboard() {
             </div>
 
             <div className="text-[11px] text-amber-300/80 bg-amber-400/10 p-2.5 rounded-lg border border-amber-400/20">
-              Default demo credentials: <strong>admin</strong> / <strong>arjun2026!</strong>
+              Default demo credentials: <strong>admin</strong> / <strong>shankar2026!</strong>
             </div>
 
             <button
@@ -456,7 +456,7 @@ export default function AdminDashboard() {
             <div className="relative w-36 h-10">
               <Image
                 src="/images/logo.png"
-                alt="Psychic Arjun Krishna"
+                alt="Psychic Shankar"
                 fill
                 className="object-contain object-left"
               />
@@ -1227,12 +1227,12 @@ export default function AdminDashboard() {
                     </span>
                     <div className="space-y-1 font-sans">
                       <div className="text-xs text-slate-700 flex items-center space-x-1 truncate">
-                        <span>https://www.psychicarjunkrishna.com</span>
+                        <span>https://www.psychicshankar.com</span>
                         <span>›</span>
                         <span className="text-slate-500">{formData.slug || 'page-slug'}</span>
                       </div>
                       <h4 className="text-lg font-medium text-[#1a0dab] hover:underline cursor-pointer truncate">
-                        {formData.metaTitle || formData.title || 'Page Title | Psychic Arjun Krishna'}
+                        {formData.metaTitle || formData.title || 'Page Title | Psychic Shankar'}
                       </h4>
                       <p className="text-xs text-[#4d5156] line-clamp-2 leading-relaxed">
                         {formData.metaDescription ||

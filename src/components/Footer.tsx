@@ -30,13 +30,13 @@ export default function Footer({ settings, services }: FooterProps) {
             <div className="relative w-48 h-14">
               <Image
                 src="/images/footer_logo.png"
-                alt="Psychic Arjun Krishna"
+                alt="Psychic Shankar"
                 fill
                 className="object-contain object-left"
               />
             </div>
             <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
-              Psychic Arjun Krishna is globally celebrated for his genuine Vedic astrology mastery, love relationship reconciliations, black magic cleansing, and accurate intuitive clairvoyance.
+              Psychic Shankar is globally celebrated for his genuine Vedic astrology mastery, love relationship reconciliations, black magic cleansing, and accurate intuitive clairvoyance.
             </p>
             <div className="flex items-center space-x-2 text-xs text-amber-400 font-semibold">
               <ShieldCheck className="w-4 h-4 text-emerald-400" />

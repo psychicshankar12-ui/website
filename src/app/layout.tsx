@@ -9,11 +9,11 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'Best Indian Astrologer in USA | Love Psychic Reader | Psychic Arjun Krishna',
+  title: 'Best Indian Astrologer in USA | Love Psychic Reader | Psychic Shankar',
   description:
     'Indian Astrologer in USA. Experience real-time Love psychic readings, black magic removal, ex love back, and authentic psychic readings live on phone and video.',
-  keywords: 'Indian Astrologer, Psychic Arjun Krishna, Love Psychic Reader, USA Astrologer, Black Magic Specialist',
-  metadataBase: new URL('https://www.psychicarjunkrishna.com'),
+  keywords: 'Indian Astrologer, Psychic Shankar, Love Psychic Reader, USA Astrologer, Black Magic Specialist',
+  metadataBase: new URL('https://www.psychicshankar.com'),
   icons: {
     icon: '/images/logo.png',
     apple: '/images/logo.png',

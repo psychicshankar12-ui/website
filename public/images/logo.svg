@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 180" width="100%" height="100%">
+  <defs>
+    <!-- Luxurious Gold Gradients -->
+    <linearGradient id="goldLinear" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff8db" />
+      <stop offset="25%" stop-color="#ffd54f" />
+      <stop offset="50%" stop-color="#ffb300" />
+      <stop offset="75%" stop-color="#ffa000" />
+      <stop offset="100%" stop-color="#ffe082" />
+    </linearGradient>
+
+    <linearGradient id="goldGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffb300" />
+      <stop offset="50%" stop-color="#fff9c4" />
+      <stop offset="100%" stop-color="#ffa000" />
+    </linearGradient>
+
+    <radialGradient id="sunburst" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffe082" stop-opacity="1" />
+      <stop offset="40%" stop-color="#ffb300" stop-opacity="0.9" />
+      <stop offset="80%" stop-color="#ff8f00" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#b26a00" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="auraGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#8e24aa" stop-opacity="0.6" />
+      <stop offset="50%" stop-color="#4a148c" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#12005e" stop-opacity="0" />
+    </radialGradient>
+
+    <filter id="shadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.7"/>
+    </filter>
+  </defs>
+
+  <!-- Left Emblem: Celestial Sunburst & Star -->
+  <g transform="translate(75, 90)">
+    <!-- Aura behind emblem -->
+    <circle cx="0" cy="0" r="65" fill="url(#auraGlow)" />
+
+    <!-- Radiant Rays (16 rays) -->
+    <g stroke="url(#goldLinear)" stroke-width="2.5" opacity="0.85">
+      <line x1="0" y1="-58" x2="0" y2="-46" />
+      <line x1="0" y1="46" x2="0" y2="58" />
+      <line x1="-58" y1="0" x2="-46" y2="0" />
+      <line x1="46" y1="0" x2="58" y2="0" />
+      <line x1="-41" y1="-41" x2="-32" y2="-32" />
+      <line x1="32" y1="32" x2="41" y2="41" />
+      <line x1="41" y1="-41" x2="32" y2="-32" />
+      <line x1="-32" y1="32" x2="-41" y2="41" />
+      
+      <line x1="-22" y1="-53" x2="-18" y2="-43" stroke-width="1.5" opacity="0.6"/>
+      <line x1="22" y1="-53" x2="18" y2="-43" stroke-width="1.5" opacity="0.6"/>
+      <line x1="-22" y1="53" x2="-18" y2="43" stroke-width="1.5" opacity="0.6"/>
+      <line x1="22" y1="53" x2="18" y2="43" stroke-width="1.5" opacity="0.6"/>
+      <line x1="-53" y1="-22" x2="-43" y2="-18" stroke-width="1.5" opacity="0.6"/>
+      <line x1="-53" y1="22" x2="-43" y2="18" stroke-width="1.5" opacity="0.6"/>
+      <line x1="53" y1="-22" x2="43" y2="-18" stroke-width="1.5" opacity="0.6"/>
+      <line x1="53" y1="22" x2="43" y2="18" stroke-width="1.5" opacity="0.6"/>
+    </g>
+
+    <!-- Outer Decorative Ring -->
+    <circle cx="0" cy="0" r="42" fill="none" stroke="url(#goldLinear)" stroke-width="2.5" stroke-dasharray="4,3" />
+
+    <!-- Inner Circle with gradient fill -->
+    <circle cx="0" cy="0" r="34" fill="#0f0c29" stroke="url(#goldLinear)" stroke-width="2.5" />
+
+    <!-- Center 8-pointed Divine Star -->
+    <path d="M 0 -26 L 6 -10 L 22 -14 L 12 -2 L 24 10 L 8 8 L 0 24 L -8 8 L -24 10 L -12 -2 L -22 -14 L -6 -10 Z" fill="url(#goldLinear)" filter="url(#shadow)" />
+
+    <!-- Center Diamond Core -->
+    <circle cx="0" cy="0" r="4.5" fill="#ffffff" />
+  </g>
+
+  <!-- Typography Right Column -->
+  <g transform="translate(160, 0)">
+    <!-- Top Micro Tagline -->
+    <g transform="translate(0, 48)">
+      <text font-family="'Cinzel', 'Cinzel Decorative', 'Georgia', serif" font-size="11" font-weight="800" fill="#ffca28" letter-spacing="3.5" text-transform="uppercase">
+        ★ BEST INDIAN VEDIC ASTROLOGER ★
+      </text>
+    </g>
+
+    <!-- Main Title: PSYCHIC SHANKAR -->
+    <g transform="translate(0, 96)" filter="url(#shadow)">
+      <text font-family="'Cinzel Decorative', 'Cinzel', 'Georgia', 'Playfair Display', serif" font-size="42" font-weight="900" fill="url(#goldLinear)" letter-spacing="2.5">
+        PSYCHIC SHANKAR
+      </text>
+    </g>
+
+    <!-- Elegant Divider with Star -->
+    <g transform="translate(0, 116)">
+      <line x1="0" y1="0" x2="160" y2="0" stroke="url(#goldGlow)" stroke-width="1.5" />
+      <polygon points="175,-5 178,0 183,0 179,3 181,8 175,5 169,8 171,3 167,0 172,0" fill="#ffd54f" />
+      <line x1="190" y1="0" x2="430" y2="0" stroke="url(#goldGlow)" stroke-width="1.5" />
+    </g>
+
+    <!-- Subtitle: LOVE PSYCHIC & SPIRITUAL HEALER -->
+    <g transform="translate(0, 142)">
+      <text font-family="'Montserrat', 'Arial', sans-serif" font-size="13" font-weight="800" fill="#fef3c7" letter-spacing="3.2" text-transform="uppercase">
+        LOVE PSYCHIC READER &amp; SPIRITUAL HEALER
+      </text>
+    </g>
+
+    <!-- Micro Credential Pill -->
+    <g transform="translate(0, 163)">
+      <rect x="0" y="-12" width="220" height="18" rx="9" fill="rgba(255, 179, 0, 0.15)" stroke="#ffb300" stroke-width="1" />
+      <text x="110" y="0" text-anchor="middle" font-family="'Montserrat', 'Arial', sans-serif" font-size="9" font-weight="800" fill="#ffe082" letter-spacing="1.5">
+        100% GUARANTEED &amp; CONFIDENTIAL
+      </text>
+    </g>
+  </g>
+</svg>

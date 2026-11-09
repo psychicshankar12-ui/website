@@ -8,7 +8,7 @@ export async function POST(req: Request) {
     const settings = await getSettings();
 
     const expectedUser = settings.adminUser || 'admin';
-    const expectedPass = settings.adminPass || 'arjun2026!';
+    const expectedPass = settings.adminPass || 'shankar2026!';
 
     if (username === expectedUser && password === expectedPass) {
       const cookieStore = await cookies();

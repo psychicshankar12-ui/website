@@ -16,7 +16,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: `About Us | Best Vedic Indian Astrologer in USA - ${settings.siteName}`,
     description:
-      'Learn about Psychic Arjun Krishna, internationally renowned master Indian Astrologer with 25+ years experience in love psychic reading, black magic removal, and spiritual healing.',
+      'Learn about Psychic Shankar, internationally renowned master Indian Astrologer with 25+ years experience in love psychic reading, black magic removal, and spiritual healing.',
     alternates: {
       canonical: '/aboutus',
     },
@@ -40,7 +40,7 @@ export default async function AboutPage() {
           SACRED VEDIC LINEAGE
         </span>
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mt-3 mb-2">
-          About <span className="gold-gradient-text">Psychic Arjun Krishna</span>
+          About <span className="gold-gradient-text">Psychic Shankar</span>
         </h1>
         <p className="text-sm md:text-base text-slate-300 max-w-2xl mx-auto">
           Best Vedic Indian Astrologer, Love Psychic Reader & Spiritual Healer in the United States
@@ -54,7 +54,7 @@ export default async function AboutPage() {
             <div className="relative w-full h-[450px] rounded-3xl overflow-hidden border-2 border-amber-400/40 shadow-2xl">
               <Image
                 src="/images/seo/about_img3.webp"
-                alt="Psychic Arjun Krishna"
+                alt="Psychic Shankar"
                 fill
                 className="object-cover object-top"
                 priority
@@ -67,13 +67,13 @@ export default async function AboutPage() {
               Over 25 Years of Divine Guidance & Transformative Results
             </h2>
             <p>
-              Psychic Arjun Krishna descends from a prestigious generational lineage of revered Vedic astrologers in India. From early childhood, he was schooled in ancient Sanskrit sacred scriptures, planetary astronomy, palmistry, face reading, and spiritual rituals under the direct tutelage of enlightened gurus.
+              Psychic Shankar descends from a prestigious generational lineage of revered Vedic astrologers in India. From early childhood, he was schooled in ancient Sanskrit sacred scriptures, planetary astronomy, palmistry, face reading, and spiritual rituals under the direct tutelage of enlightened gurus.
             </p>
             <p>
-              Over the last two decades in the United States, Arjun Krishna has successfully assisted over 15,000 individuals, families, couples, and entrepreneurs. His warm, empathetic approach combined with uncompromising accuracy has earned him the trust of clients from all religious backgrounds, walks of life, and continents.
+              Over the last two decades in the United States, Psychic Shankar has successfully assisted over 15,000 individuals, families, couples, and entrepreneurs. His warm, empathetic approach combined with uncompromising accuracy has earned him the trust of clients from all religious backgrounds, walks of life, and continents.
             </p>
             <p>
-              He firmly believes that no difficulty is insurmountable when addressed with genuine spiritual insight and authentic Vedic remedies. Whether resolving severe marital conflict, turning around catastrophic business losses, removing dark generational curses, or rekindling lost love, Arjun Krishna delivers peace of mind and lasting harmony.
+              He firmly believes that no difficulty is insurmountable when addressed with genuine spiritual insight and authentic Vedic remedies. Whether resolving severe marital conflict, turning around catastrophic business losses, removing dark generational curses, or rekindling lost love, Psychic Shankar delivers peace of mind and lasting harmony.
             </p>
 
             <div className="pt-4 flex flex-wrap gap-4">

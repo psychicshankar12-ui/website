@@ -44,7 +44,7 @@ export async function POST(req: Request) {
       content: body.content || '',
       videoUrl: body.videoUrl || '',
       faqs: body.faqs || [],
-      metaTitle: body.metaTitle || `${body.title} | Psychic Arjun Krishna`,
+      metaTitle: body.metaTitle || `${body.title} | Psychic Shankar`,
       metaDescription: body.metaDescription || body.shortExcerpt || '',
       metaKeywords: body.metaKeywords || '',
       canonicalUrl: body.canonicalUrl || `/${body.slug}`,

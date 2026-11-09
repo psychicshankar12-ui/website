@@ -23,7 +23,7 @@ export async function generateMetadata(): Promise<Metadata> {
     description:
       'Indian Astrologer in USA. Experience real-time Love psychic readings, black magic removal, ex love back remedies, and relationship solutions live on phone and video.',
     keywords:
-      'Best Indian Astrologer in USA, Love Psychic Reader, Black Magic Removal, Get Ex Love Back, Psychic Arjun Krishna, Astrology Services USA',
+      'Best Indian Astrologer in USA, Love Psychic Reader, Black Magic Removal, Get Ex Love Back, Psychic Shankar, Astrology Services USA',
     alternates: {
       canonical: '/',
     },
@@ -61,7 +61,7 @@ export default async function HomePage() {
     '@graph': [
       {
         '@type': 'LocalBusiness',
-        '@id': 'https://www.psychicarjunkrishna.com/#localbusiness',
+        '@id': 'https://www.psychicshankar.com/#localbusiness',
         name: settings.siteName,
         description:
           'Best Indian Astrologer in USA. Authentic Vedic psychic reader, love back specialist, and spiritual healer.',
@@ -74,16 +74,16 @@ export default async function HomePage() {
         },
         priceRange: '$$',
         openingHours: 'Mo-Su 00:00-24:00',
-        url: 'https://www.psychicarjunkrishna.com',
-        image: 'https://www.psychicarjunkrishna.com/images/logo.png',
+        url: 'https://www.psychicshankar.com',
+        image: 'https://www.psychicshankar.com/images/logo.png',
       },
       {
         '@type': 'Person',
-        '@id': 'https://www.psychicarjunkrishna.com/#astrologer',
-        name: 'Psychic Arjun Krishna',
+        '@id': 'https://www.psychicshankar.com/#astrologer',
+        name: 'Psychic Shankar',
         jobTitle: 'Master Indian Astrologer & Psychic Reader',
         worksFor: {
-          '@id': 'https://www.psychicarjunkrishna.com/#localbusiness',
+          '@id': 'https://www.psychicshankar.com/#localbusiness',
         },
         description:
           'Celebrated generational Vedic Astrologer and Love Psychic with 25+ years experience helping over 15,000 clients across USA.',
@@ -131,7 +131,7 @@ export default async function HomePage() {
                 <div className="relative w-full h-[400px] sm:h-[480px] rounded-3xl overflow-hidden border-2 border-amber-400/40 shadow-2xl shadow-purple-950/60">
                   <Image
                     src="/images/seo/about_img3.webp"
-                    alt="Psychic Arjun Krishna Expert in Indian Astrology"
+                    alt="Psychic Shankar Expert in Indian Astrology"
                     fill
                     className="object-cover object-top"
                     priority
@@ -140,7 +140,7 @@ export default async function HomePage() {
                   <div className="absolute bottom-4 left-4 right-4 bg-slate-900/90 border border-amber-400/40 p-4 rounded-2xl backdrop-blur-md">
                     <div className="flex items-center space-x-2 text-amber-400 font-bold text-sm">
                       <Star className="w-4 h-4 fill-amber-400" />
-                      <span>Psychic Arjun Krishna</span>
+                      <span>Psychic Shankar</span>
                     </div>
                     <p className="text-xs text-slate-300 mt-0.5">
                       Master Indian Astrologer, Love Spell Caster & Spiritual Healer
@@ -157,16 +157,16 @@ export default async function HomePage() {
                 </div>
 
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white leading-tight">
-                  Psychic Arjun Krishna <br />
+                  Psychic Shankar <br />
                   <span className="gold-gradient-text">Expert in Indian Astrology & Love Readings</span>
                 </h2>
 
                 <p className="text-sm md:text-base text-slate-300 leading-relaxed">
-                  Psychic Arjun Krishna is a distinguished and internationally renowned Vedic astrologer, spiritual healer, and clairvoyant psychic with over 25 years of rich experience. Originating from a celebrated heritage of divine astrologers, he has dedicated his life to guiding individuals through their darkest hours toward light, love, and lasting fulfillment.
+                  Psychic Shankar is a distinguished and internationally renowned Vedic astrologer, spiritual healer, and clairvoyant psychic with over 25 years of rich experience. Originating from a celebrated heritage of divine astrologers, he has dedicated his life to guiding individuals through their darkest hours toward light, love, and lasting fulfillment.
                 </p>
 
                 <p className="text-sm md:text-base text-slate-300 leading-relaxed">
-                  Whether you are devastated by a sudden breakup, suffering from intense marital conflict, hindered by persistent bad luck, or targeted by malicious black magic and evil spirits, Psychic Arjun Krishna provides profound insights and powerful, customized remedies that deliver noticeable results.
+                  Whether you are devastated by a sudden breakup, suffering from intense marital conflict, hindered by persistent bad luck, or targeted by malicious black magic and evil spirits, Psychic Shankar provides profound insights and powerful, customized remedies that deliver noticeable results.
                 </p>
 
                 {/* Key Benefits List */}
@@ -199,7 +199,7 @@ export default async function HomePage() {
                     <span>Call: {settings.phoneDisplay}</span>
                   </a>
                   <a
-                    href={`https://wa.me/${settings.whatsapp}?text=Hello%20Psychic%20Arjun%20Krishna,%20I%20would%20like%20to%20consult%20with%20you.`}
+                    href={`https://wa.me/${settings.whatsapp}?text=Hello%20Psychic%20Shankar,%20I%20would%20like%20to%20consult%20with%20you.`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-5 py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm rounded-xl flex items-center space-x-2 shadow-lg shadow-emerald-900/30 transition"
@@ -246,7 +246,7 @@ export default async function HomePage() {
                 Need Urgent Astrological Advice?
               </h3>
               <p className="text-xs sm:text-sm text-slate-300 max-w-xl">
-                Speak directly with Psychic Arjun Krishna today. Immediate appointments available via telephone or private video session.
+                Speak directly with Psychic Shankar today. Immediate appointments available via telephone or private video session.
               </p>
             </div>
             <div className="flex flex-wrap items-center gap-3 shrink-0">
