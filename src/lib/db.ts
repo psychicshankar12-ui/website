@@ -101,16 +101,27 @@ const defaultSettings: SiteSettings = {
   adminPass: 'shankar2026!',
 };
 
-const hasRedis = Boolean(
-  (process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL) &&
-  (process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN)
-);
+const redisUrl =
+  process.env.KV_REST_API_URL ||
+  process.env.UPSTASH_REDIS_REST_URL ||
+  process.env.STORAGE_REST_API_URL ||
+  process.env.STORAGE_URL ||
+  process.env.REDIS_REST_API_URL ||
+  process.env.REDIS_URL;
 
-const redis = hasRedis
+const redisToken =
+  process.env.KV_REST_API_TOKEN ||
+  process.env.UPSTASH_REDIS_REST_TOKEN ||
+  process.env.STORAGE_REST_API_TOKEN ||
+  process.env.STORAGE_TOKEN ||
+  process.env.REDIS_REST_API_TOKEN ||
+  process.env.REDIS_TOKEN;
+
+const redis = (redisUrl && redisToken)
   ? new Redis({
-    url: (process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL)!,
-    token: (process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN)!,
-  })
+      url: redisUrl,
+      token: redisToken,
+    })
   : null;
 
 const REDIS_KEY = 'psychic_db';
