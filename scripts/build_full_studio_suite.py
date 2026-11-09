@@ -245,3 +245,4 @@ if __name__ == '__main__':
     print("=== Generating 8 Feature Medallions ===")
     build_feature_badges()
     print("ALL ASSETS FULLY GENERATED!")
+

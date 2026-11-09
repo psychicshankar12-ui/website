@@ -12,48 +12,48 @@ interface HeroSliderProps {
 
 const slides = [
   {
-    desktop: '/images/herobanner/banner_01.png',
-    mobile: '/images/herobanner/mobile_01.png',
+    desktop: '/images/herobanner/v2/banner_01.png',
+    mobile: '/images/herobanner/v2/mobile_01.png',
     title: 'No.1 Indian Best Astrologer & Psychic Spiritual Healer',
     subtitle: 'Healing, Family Problems, Psychic Readings, Work Success, Business Growth',
     tag: '100% Guaranteed & Confidential',
     ctaText: 'Reunite With Loved Ones'
   },
   {
-    desktop: '/images/herobanner/banner_02.png',
-    mobile: '/images/herobanner/mobile_02.png',
+    desktop: '/images/herobanner/v2/banner_02.png',
+    mobile: '/images/herobanner/v2/mobile_02.png',
     title: 'Specialist in Love Psychic Reading & Relationships',
     subtitle: 'Privacy & Confidentiality Throughout the Reading, Solve All Your Problems',
     tag: '25+ Years Lineage of Vedic Mastery',
     ctaText: 'Get Your Ex Love Back'
   },
   {
-    desktop: '/images/herobanner/banner_03.png',
-    mobile: '/images/herobanner/mobile_03.png',
+    desktop: '/images/herobanner/v2/banner_03.png',
+    mobile: '/images/herobanner/v2/mobile_03.png',
     title: 'Black Magic & Evil Spirit Removal Specialist',
     subtitle: 'Break Generational Curses, Hexes, Negative Energy & Harmful Influences',
     tag: 'Instant Spiritual Protection',
     ctaText: 'Protect Your Family Now'
   },
   {
-    desktop: '/images/herobanner/banner_04.png',
-    mobile: '/images/herobanner/mobile_04.png',
+    desktop: '/images/herobanner/v2/banner_04.png',
+    mobile: '/images/herobanner/v2/mobile_04.png',
     title: 'Husband & Wife Relationship Dispute Specialist',
     subtitle: 'Restore Sacred Love, Deep Passion, Loyalty & Lifelong Understanding',
     tag: 'Stop Separation & Divorce',
     ctaText: 'Save Your Marriage'
   },
   {
-    desktop: '/images/herobanner/banner_05.png',
-    mobile: '/images/herobanner/mobile_05.png',
+    desktop: '/images/herobanner/v2/banner_05.png',
+    mobile: '/images/herobanner/v2/mobile_05.png',
     title: 'Spiritual Healing & Negative Energy Removal',
     subtitle: 'Cleanse Negative Aura, Restore Harmony, Peace & Divine Blessings',
     tag: 'Urgent Crisis Support',
     ctaText: 'Cleanse Negative Aura'
   },
   {
-    desktop: '/images/herobanner/banner_06.png',
-    mobile: '/images/herobanner/mobile_06.png',
+    desktop: '/images/herobanner/v2/banner_06.png',
+    mobile: '/images/herobanner/v2/mobile_06.png',
     title: 'World Famous Astrologer & Psychic Reader',
     subtitle: 'Accurate Palm, Face & Horoscope Readings with Immediate Authentic Remedies',
     tag: 'Over 15,000+ Satisfied Clients',

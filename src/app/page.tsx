@@ -130,7 +130,7 @@ export default async function HomePage() {
               <div className="lg:col-span-5 relative">
                 <div className="relative w-full h-[400px] sm:h-[480px] rounded-3xl overflow-hidden border-2 border-amber-400/40 shadow-2xl shadow-purple-950/60">
                   <Image
-                    src="/images/seo/about_img3.webp"
+                    src="/images/seo/v2/about_img3.webp"
                     alt="Psychic Shankar Expert in Indian Astrology"
                     fill
                     className="object-cover object-top"

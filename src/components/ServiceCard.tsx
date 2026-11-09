@@ -17,7 +17,7 @@ export default function ServiceCard({ service, settings }: ServiceCardProps) {
       {/* Image Container */}
       <div className="relative w-full h-52 sm:h-56 overflow-hidden bg-gradient-to-b from-slate-950 via-[#130f29] to-slate-950 p-2 flex items-center justify-center">
         <Image
-          src={service.featuredImage || '/images/our_service_img/pro_im_1.png'}
+          src={service.featuredImage || '/images/our_service_img/v2/pro_im_1.png'}
           alt={service.title}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"

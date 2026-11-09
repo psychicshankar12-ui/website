@@ -69,7 +69,7 @@ export default function AdminDashboard() {
     bannerTitle: '',
     bannerSubtitle: '',
     bannerImage: '/images/herobanner/ban01.png',
-    featuredImage: '/images/our_service_img/pro_im_1.png',
+    featuredImage: '/images/our_service_img/v2/pro_im_1.png',
     shortExcerpt: '',
     content: '',
     videoUrl: '',
@@ -1156,7 +1156,7 @@ export default function AdminDashboard() {
                         type="text"
                         value={formData.featuredImage || ''}
                         onChange={(e) => setFormData({ ...formData, featuredImage: e.target.value })}
-                        placeholder="/images/our_service_img/pro_im_1.png"
+                        placeholder="/images/our_service_img/v2/pro_im_1.png"
                         className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded-xl text-xs text-white"
                       />
                     </div>

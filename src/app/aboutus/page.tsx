@@ -53,7 +53,7 @@ export default async function AboutPage() {
           <div className="lg:col-span-5 relative">
             <div className="relative w-full h-[450px] rounded-3xl overflow-hidden border-2 border-amber-400/40 shadow-2xl">
               <Image
-                src="/images/seo/about_img3.webp"
+                src="/images/seo/v2/about_img3.webp"
                 alt="Psychic Shankar"
                 fill
                 className="object-cover object-top"

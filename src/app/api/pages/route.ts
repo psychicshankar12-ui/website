@@ -39,7 +39,7 @@ export async function POST(req: Request) {
       bannerTitle: body.bannerTitle || body.title,
       bannerSubtitle: body.bannerSubtitle || '',
       bannerImage: body.bannerImage || '/images/herobanner/ban01.png',
-      featuredImage: body.featuredImage || '/images/our_service_img/pro_im_1.png',
+      featuredImage: body.featuredImage || '/images/our_service_img/v2/pro_im_1.png',
       shortExcerpt: body.shortExcerpt || '',
       content: body.content || '',
       videoUrl: body.videoUrl || '',
