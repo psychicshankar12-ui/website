@@ -61,11 +61,12 @@ export default function TestimonialsSection({ testimonials }: TestimonialsSectio
 
           {/* Google Review Badge */}
           <div className="mt-8 pt-6 border-t border-purple-900/40 flex justify-center items-center space-x-3">
-            <div className="relative w-40 h-10">
+            <div className="relative w-48 h-14 transition-transform duration-300 hover:scale-105">
               <Image
                 src="/images/seo/google_cus_review_btn.webp"
                 alt="Google Customer Reviews"
                 fill
+                sizes="192px"
                 className="object-contain"
               />
             </div>
