@@ -13,14 +13,14 @@ interface HeroSliderProps {
 const slides = [
   {
     image: '/images/herobanner/ban01.png',
-    title: 'Best Indian Astrologer in USA',
-    subtitle: 'Healing, Family Problems, Readings, Work Success, Business Growth',
+    title: 'Best Indian Astrologer in USA | Psychic Shankar',
+    subtitle: 'Healing, Family Problems, Psychic Readings, Work Success, Business Growth',
     tag: '100% Guaranteed & Confidential',
     ctaText: 'Reunite With Loved Ones'
   },
   {
     image: '/images/herobanner/ban02.png',
-    title: 'Love Psychic Reader & Spiritual Healer',
+    title: 'Love Psychic Reader & Spiritual Healer | Psychic Shankar',
     subtitle: 'Privacy & Confidentiality Throughout the Reading, Solve All Your Problems',
     tag: '25+ Years Lineage of Vedic Mastery',
     ctaText: 'Get Your Ex Love Back'
@@ -34,21 +34,21 @@ const slides = [
   },
   {
     image: '/images/herobanner/ban04.png',
-    title: 'Black Magic & Evil Spirit Removal Specialist',
+    title: 'Black Magic & Evil Spirit Removal Specialist | Psychic Shankar',
     subtitle: 'Break Generational Curses, Hexes, Negative Energy & Harmful Influences',
     tag: 'Instant Spiritual Protection',
     ctaText: 'Protect Your Family Now'
   },
   {
     image: '/images/herobanner/ban05.png',
-    title: 'Accurate Palm, Face & Horoscope Readings',
+    title: 'Accurate Palm, Face & Horoscope Readings by Psychic Shankar',
     subtitle: 'Clear Insight Into Past, Present & Future With Authentic Divine Guidance',
     tag: 'Direct Phone & Video Readings',
     ctaText: 'Discover Your Destiny'
   },
   {
     image: '/images/herobanner/ban06.png',
-    title: 'Stop Separation & Prevent Divorce Today',
+    title: 'Stop Separation & Prevent Divorce Today | Psychic Shankar',
     subtitle: 'Restore Sacred Love, Deep Passion, Loyalty & Lifelong Understanding',
     tag: 'Immediate Turnaround Remedies',
     ctaText: 'Save Your Marriage'
